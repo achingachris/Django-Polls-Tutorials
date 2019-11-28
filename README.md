@@ -1,5 +1,5 @@
 <!-- Procedure Shell -->
-# python3 manage.py shell API --playWithCode
+python3 manage.py shell API --playWithCode
 from polls.models import Choice, Question  # Import the model classes we just wrote.
 Question.objects.all()
 from django.utils import timezone
@@ -76,3 +76,20 @@ After incrementing the choice count, the code returns an HttpResponseRedirect ra
 As the Python comment above points out, you should always return an HttpResponseRedirect after successfully dealing with POST data. This tip isn’t specific to Django; it’s just good Web development practice.
 
 We are using the reverse() function in the HttpResponseRedirect constructor in this example. This function helps avoid having to hardcode a URL in the view function. It is given the name of the view that we want to pass control to and the variable portion of the URL pattern that points to that view. In this case, using the URLconf we set up in Tutorial 3, this reverse() call will return a string like
+
+https://en.wikipedia.org/wiki/Test-driven_development
+
+** TESTING WITH SHELL
+import datetime
+from django.utils import timezone
+from polls.models import Question
+
+create a Question instance with pub_date 30 days in the future
+future_question = Question(pub_date=timezone.now() + datetime.timedelta(days=30))
+was it published recently?
+future_question.was_published_recently()
+True
+Since things in the future are not ‘recent’, this is clearly wrong.
+
+creat test in tests.py
+manage.py test polls 
