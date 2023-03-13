@@ -5,7 +5,7 @@ dbus-python==1.2.18
 distlib==0.3.6
 distro==1.7.0
 distro-info===1.1build1
-Django==2.2.7
+Django==2.2.28
 filelock==3.9.0
 httplib2==0.20.2
 importlib-metadata==4.6.4
